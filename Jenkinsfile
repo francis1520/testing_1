@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "candy-store"
+        IMAGE_NAME = "francisreddy/candy-store"
         IMAGE_TAG = "01"
         DOCKER_USERNAME = 'francisreddy'
         DOCKER_PASSWORD = 'Nani@1997'
