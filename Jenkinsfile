@@ -37,9 +37,6 @@ pipeline {
         stage('Deploy on EC2') {
             steps {
                 sh """
-                    docker stop frontend-container || true
-                    docker rm frontend-container || true
-                    docker image prune -af || true   # Remove unused images
                     docker pull ${REGISTRY}:${IMAGE_TAG}
                     docker rmi ${REGISTRY}:${IMAGE_TAG} || true
                     docker run -d -p 3000:3000 --name frontend-container --restart=always ${REGISTRY}:${IMAGE_TAG}
