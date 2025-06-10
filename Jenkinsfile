@@ -38,7 +38,7 @@ pipeline {
                 sh '''
                     docker pull ${FULL_IMAGE_NAME}
                     docker rmi ${FULL_IMAGE_NAME} || true
-                    docker run -d -p 3000:3000 --name frontend-container --restart=always ${FULL_IMAGE_NAME}
+                    docker run -d -p 5000:5000 --name frontend-container --restart=always ${FULL_IMAGE_NAME}
                 '''
             }
         }
